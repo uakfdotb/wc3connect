@@ -57,6 +57,7 @@ public class WCHost implements Runnable {
 		
 		games = new ArrayList<GameInfo>();
 		buf = ByteBuffer.allocate(65536);
+		udpCached = new ArrayList<byte[]>();
 	}
 	
 	public void init() {
