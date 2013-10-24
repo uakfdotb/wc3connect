@@ -1,6 +1,6 @@
 1. Create a MySQL database and initialize with the schema defined in install.sql
 2. Edit WC3Connect configuration file at wc3connect/bin/wc3cd.cfg
-	* trusted: comma-separated list of servers to allow to receive UDP game broadcast packets from
+	* trusted: space-separated list of servers to allow to receive UDP game broadcast packets from
 	* db_host, db_username, db_password: host, username, and password for MySQL server
 3. Start your WC3Connect daemon
 	cd wc3connect/bin
