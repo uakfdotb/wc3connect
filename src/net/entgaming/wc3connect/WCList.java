@@ -3,6 +3,7 @@ package net.entgaming.wc3connect;
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.ByteBuffer;
@@ -10,8 +11,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
-import javax.net.ssl.HttpsURLConnection;
 
 public class WCList implements Runnable {
 	WC3Connect main;
@@ -70,13 +69,13 @@ public class WCList implements Runnable {
 
 	public void run() {
 		while(!terminate) {
-			HttpsURLConnection conn;
+			HttpURLConnection conn;
 			String line;
 			
 			main.log("[WCList] Connecting to server...");
 			
 			try {
-				conn = (HttpsURLConnection) listServer.openConnection();
+				conn = (HttpURLConnection) listServer.openConnection();
 				conn.setRequestMethod("GET");
 				BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 				
