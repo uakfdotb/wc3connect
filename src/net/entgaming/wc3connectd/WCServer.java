@@ -52,7 +52,7 @@ public class WCServer extends Thread {
 	}
 		
 	public void init() {
-		SocketAddress addr = new InetSocketAddress(PORT);
+		SocketAddress addr = new InetSocketAddress(Config.getInt("port", PORT));
 		
 		try {
 			wc3Server = new DatagramSocket(addr);
